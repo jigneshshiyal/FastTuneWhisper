@@ -2,6 +2,38 @@
 
 **FastTuneWhisper** is a production-ready transcription system that uses a fine-tuned Whisper model with optimized CTranslate2 backend for **fast and accurate inference**, deployed via FastAPI with a **Streamlit-based frontend**.
 
+## 📊 Model Training Results
+
+Some results from fine-tuning Whisper on a domain-specific dataset:
+
+| Metric                     | Observation                                                               |
+| -------------------------- | ------------------------------------------------------------------------- |
+| **WER vs Steps**           | Shows consistent improvement, decreasing from \~94.78% to \~51.32%.       |
+| **Loss vs Steps**          | Both training and evaluation losses steadily decrease over time.          |
+| **Learning Rate vs Steps** | Learning rate increases over training as expected in warm-up scheduling.  |
+| **Gradient Norm vs Steps** | Gradual reduction indicates stable training dynamics.                     |
+| **Before vs After WER**    | Word Error Rate dropped from **114.75%** to **55.60%** after fine-tuning. |
+
+<p align="center">
+  <img src="./img/model_training_result.png" width="800"/>
+  <br>
+  <em>Figure: Fine-tuning metrics - WER, Loss, LR, and Grad Norm over steps</em>
+</p>
+
+<p align="center">
+  <img src="./img/whisper_wer_result.png" width="400"/>
+  <br>
+  <em>Figure: Word Error Rate Before vs After Fine-tuning</em>
+</p>
+
+<p align="center">
+  <img src="./img/loss_wer_result.png" width="800"/>
+  <br>
+  <em>Figure: Training & Validation Loss and WER trend</em>
+</p>
+
+> 📌 Note: The Whisper model used is `small`, fine-tuned on a custom Hindi dataset. Results may vary with different domains or languages.
+
 ## 📸 Project Screenshots
 
 <p align="center">
@@ -67,37 +99,6 @@ streamlit run app.py
 * Exported to [CTranslate2](https://github.com/OpenNMT/CTranslate2) format with quantization: `int8`
 
 
-## 📊 Model Training Results
-
-Some results from fine-tuning Whisper on a domain-specific dataset:
-
-| Metric                     | Observation                                                               |
-| -------------------------- | ------------------------------------------------------------------------- |
-| **WER vs Steps**           | Shows consistent improvement, decreasing from \~94.78% to \~51.32%.       |
-| **Loss vs Steps**          | Both training and evaluation losses steadily decrease over time.          |
-| **Learning Rate vs Steps** | Learning rate increases over training as expected in warm-up scheduling.  |
-| **Gradient Norm vs Steps** | Gradual reduction indicates stable training dynamics.                     |
-| **Before vs After WER**    | Word Error Rate dropped from **114.75%** to **55.60%** after fine-tuning. |
-
-<p align="center">
-  <img src="./img/model_training_result.png" width="800"/>
-  <br>
-  <em>Figure: Fine-tuning metrics - WER, Loss, LR, and Grad Norm over steps</em>
-</p>
-
-<p align="center">
-  <img src="./img/whisper_wer_result.png" width="400"/>
-  <br>
-  <em>Figure: Word Error Rate Before vs After Fine-tuning</em>
-</p>
-
-<p align="center">
-  <img src="./img/loss_wer_result.png" width="800"/>
-  <br>
-  <em>Figure: Training & Validation Loss and WER trend</em>
-</p>
-
-> 📌 Note: The Whisper model used is `small`, fine-tuned on a custom Hindi dataset. Results may vary with different domains or languages.
 
 
 ## 🛠️ Requirements
