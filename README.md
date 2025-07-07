@@ -2,7 +2,20 @@
 
 **FastTuneWhisper** is a production-ready transcription system that uses a fine-tuned Whisper model with optimized CTranslate2 backend for **fast and accurate inference**, deployed via FastAPI with a **Streamlit-based frontend**.
 
+## 📸 Project Screenshots
 
+<p align="center">
+    <img src="./img/img1.png" width="400"/>
+    <br>
+    <em>Figure: demostration screenshot-1 of FastTuneWhisper</em>
+</p>
+
+
+<p align="center">
+    <img src="./img/img2.png" width="400"/>
+    <br>
+    <em>Figure: demostration screenshot-2 of FastTuneWhisper</em>
+</p>
 
 ## 📦 Project Structure
 
